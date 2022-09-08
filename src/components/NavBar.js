@@ -15,7 +15,7 @@ const NavBar = () => {
                 <Navbar key={expand} bg="light" expand={expand} className="mb-1">
                     <Container fluid>
                         <Navbar.Brand >JTS SHOP</Navbar.Brand>
-                        <CartWidget items={1} />
+                        <CartWidget items={6} />
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}
