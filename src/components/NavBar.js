@@ -5,16 +5,21 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 //-------------------------------------
 import CartWidget from './CartWidget'
-
+import {  Link } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+let estilosLink = {
+    margin: '7px',
+    textDecoration: 'none',
+    color: 'black'
+}
 const NavBar = () => {
     return (
         <header>
             {['xxl'].map((expand) => (
                 <Navbar key={expand} bg="light" expand={expand} className="mb-1">
                     <Container fluid>
-                        <Navbar.Brand >JTS SHOP</Navbar.Brand>
+                        <Navbar.Brand ><Link  to='/'>JTS SHOP</Link></Navbar.Brand>
                         <CartWidget items={6} />
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
@@ -28,15 +33,14 @@ const NavBar = () => {
                                 </Offcanvas.Title>
                             </Offcanvas.Header>
                             <Offcanvas.Body>
-                               
                                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                                    <Nav.Link>Almacenamiento</Nav.Link>
-                                    <Nav.Link>Gabinetes</Nav.Link>
-                                    <Nav.Link>Memorias</Nav.Link>
-                                    <Nav.Link>Motherboards</Nav.Link>
-                                    <Nav.Link>Microprocesadores</Nav.Link>
-                                    <Nav.Link>Unidades ópticas</Nav.Link>
-                                    <Nav.Link>Placas de video</Nav.Link>
+                                    <Link to="/category/Almacenamiento" style={estilosLink}>Almacenamiento</Link>
+                                    <Link to='/category/Gabinetes' style={estilosLink}>Gabinetes</Link>
+                                    <Link to='/category/Memorias' style={estilosLink}>Memorias</Link>
+                                    <Link to='/category/Motherboards' style={estilosLink}>Motherboards</Link>
+                                    <Link to='/category/Microprocesadores' style={estilosLink}>Microprocesadores</Link>
+                                    <Link to='/category/Unidades_ópticas' style={estilosLink}>Unidades ópticas</Link>
+                                    <Link to='/category/Placas_de_video' style={estilosLink}>Placas de video</Link>
                                 </Nav>
                                 <Form className="d-flex">
                                     <Form.Control

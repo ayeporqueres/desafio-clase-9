@@ -13,9 +13,7 @@ const ItemDetail = ({ item: { descripcion, precio, stok, seccion } }) => {
             <h3>Valor: U$S {precio}</h3>
             <h3>Cantidad en stok: {stok}</h3>
             <h3>Clasificación: {seccion}</h3>
-
             <ItemCount stock={stok} initial={1} onAdd={onAdd} />
-            
         </div>
     );
 }

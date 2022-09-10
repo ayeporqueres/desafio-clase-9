@@ -6,5 +6,4 @@ const CartWidget = ({items}) => {
         </div>
     );
 }
-
 export default CartWidget;
