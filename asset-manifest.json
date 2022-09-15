@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/desafio-clase-9/static/css/main.6b0f2be5.css",
-    "main.js": "/desafio-clase-9/static/js/main.d0d1520d.js",
+    "main.css": "/desafio-clase-9/static/css/main.26a11636.css",
+    "main.js": "/desafio-clase-9/static/js/main.baa90b03.js",
     "static/media/Gabinetes.jpg": "/desafio-clase-9/static/media/Gabinetes.77580139109542c72416.jpg",
     "static/media/Memorias.jpg": "/desafio-clase-9/static/media/Memorias.a79a41011ccc13baaa79.jpg",
     "static/media/Motherboards.jpg": "/desafio-clase-9/static/media/Motherboards.3d56eb924f5a3bf28517.jpg",
     "static/media/Microprocesadores.jpg": "/desafio-clase-9/static/media/Microprocesadores.f4cc715a51e88e0f6afd.jpg",
     "static/media/Almacenamiento.jpg": "/desafio-clase-9/static/media/Almacenamiento.0029ff4e42bbf7594d4b.jpg",
     "index.html": "/desafio-clase-9/index.html",
-    "main.6b0f2be5.css.map": "/desafio-clase-9/static/css/main.6b0f2be5.css.map",
-    "main.d0d1520d.js.map": "/desafio-clase-9/static/js/main.d0d1520d.js.map"
+    "main.26a11636.css.map": "/desafio-clase-9/static/css/main.26a11636.css.map",
+    "main.baa90b03.js.map": "/desafio-clase-9/static/js/main.baa90b03.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b0f2be5.css",
-    "static/js/main.d0d1520d.js"
+    "static/css/main.26a11636.css",
+    "static/js/main.baa90b03.js"
   ]
 }
