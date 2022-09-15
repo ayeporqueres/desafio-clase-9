@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import customFetch from "../mocks/promesa";
 import { useEffect, useState } from "react";
 import datos from '../mocks/datos';

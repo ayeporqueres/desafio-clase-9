@@ -2,25 +2,30 @@ import ItemCount from './ItemCount'
 import './styles/DetalleProducto.css';
 import imagenes from '../assets/img';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { GlobalContext } from './CartContext';
 
-const ItemDetail = ({ item: { descripcion, precio, stok, seccion }, bandera }) => {
-    const [ctrVista, setctrVista] = useState(true);
+
+const ItemDetail = ({ item, bandera }) => {
+    const [controlBoton, setctrVista] = useState(true);
+    const {addItem} = useContext(GlobalContext);
+
     function onAdd(valor) {
         alert(`Agregaste ${valor} item${valor > 1 ? 's' : ''}`);
         setctrVista(false);
+        addItem(item, valor);
     }
     return (
         <>{bandera ?
             <div id='mostrarDetalles'>
-                <img src={imagenes[seccion]} alt="" />
-                <h3>Descripion: {descripcion}</h3>
-                <h3>Valor: U$S {precio}</h3>
-                <h3>Cantidad en stok: {stok}</h3>
-                <h3>Clasificación: {seccion}</h3>
+                <img src={imagenes[item.seccion]} alt="" />
+                <h3>Descripion: {item.descripcion}</h3>
+                <h3>Valor: U$S {item.precio}</h3>
+                <h3>Cantidad en stok: {item.stok}</h3>
+                <h3>Clasificación: {item.seccion}</h3>
                 {
-                    ctrVista ?
-                        <ItemCount stock={stok} initial={0} onAdd={onAdd} /> :
+                    controlBoton ?
+                        <ItemCount stock={item.stok} initial={0} onAdd={onAdd} /> :
                         <Link to='/cart'>Ir al carrito de compras</Link>
                 }
             </div> :

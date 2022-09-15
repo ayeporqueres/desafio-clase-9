@@ -19,8 +19,10 @@ const NavBar = () => {
             {['xxl'].map((expand) => (
                 <Navbar key={expand} bg="light" expand={expand} className="mb-1">
                     <Container fluid>
-                        <Navbar.Brand ><Link  to='/'>JTS SHOP</Link></Navbar.Brand>
-                        <CartWidget items={6} />
+                        <Navbar.Brand ><Link to='/'>JTS SHOP</Link></Navbar.Brand>
+                        <Link to='/cart'>
+                            <CartWidget items={6} />
+                        </Link>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas
                             id={`offcanvasNavbar-expand-${expand}`}

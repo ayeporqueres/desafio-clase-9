@@ -1,5 +1,5 @@
 #mostrarDetalles {
-    height          : 800px;
+    height          : 650px;
     width           : 400px;
     background-color: darkgray;
     margin          : 40px auto;
@@ -20,8 +20,8 @@
 #mostrarDetalles>img {
     object-fit   : contain;
     margin       : auto;
-    width        : 350px;
-    height       : 350px;
+    width        : 200px;
+    height       : 200px;
     border-radius: 20px;
     margin       : 10px;
 }
@@ -44,10 +44,10 @@
 .loader {
     width              : 150px;
     height             : 150px;
-    border             : 20px solid salmon;
-    border-top-color   : #74b982;
+    border             : 20px solid red;
+    border-top-color   : white;
     border-top-style   : groove;
-    border-bottom-color: #74b982;
+    border-bottom-color: white;
     border-bottom-style: groove;
     border-radius      : 100%;
     margin             : auto;

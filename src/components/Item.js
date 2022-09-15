@@ -17,6 +17,7 @@ function Item({ item}) {
       </div>
       <div className="card-footer">
         <span className="text-title">Precio: U$S {item.precio}</span>
+        <span className="text-title">Stock: {item.stok}</span>
         <Link to={`/item/${item.id}`}>Ir a detalles</Link>
       </div>
     </div>

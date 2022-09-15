@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import datos from '../mocks/datos';
 import ItemList from './ItemList';
 import { useParams } from "react-router-dom";
-import './styles/ItemListContainer.css';
 
 const ItemListContainer = () => {
     const [res, setRes] = useState([]);
