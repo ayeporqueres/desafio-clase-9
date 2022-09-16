@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/desafio-clase-9/static/css/main.26a11636.css",
-    "main.js": "/desafio-clase-9/static/js/main.aa9b1689.js",
+    "main.js": "/desafio-clase-9/static/js/main.02c5e25b.js",
     "static/media/Gabinetes.jpg": "/desafio-clase-9/static/media/Gabinetes.77580139109542c72416.jpg",
     "static/media/Memorias.jpg": "/desafio-clase-9/static/media/Memorias.a79a41011ccc13baaa79.jpg",
     "static/media/Motherboards.jpg": "/desafio-clase-9/static/media/Motherboards.3d56eb924f5a3bf28517.jpg",
@@ -9,10 +9,10 @@
     "static/media/Almacenamiento.jpg": "/desafio-clase-9/static/media/Almacenamiento.0029ff4e42bbf7594d4b.jpg",
     "index.html": "/desafio-clase-9/index.html",
     "main.26a11636.css.map": "/desafio-clase-9/static/css/main.26a11636.css.map",
-    "main.aa9b1689.js.map": "/desafio-clase-9/static/js/main.aa9b1689.js.map"
+    "main.02c5e25b.js.map": "/desafio-clase-9/static/js/main.02c5e25b.js.map"
   },
   "entrypoints": [
     "static/css/main.26a11636.css",
-    "static/js/main.aa9b1689.js"
+    "static/js/main.02c5e25b.js"
   ]
 }
