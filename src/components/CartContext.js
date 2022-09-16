@@ -5,20 +5,25 @@ export const GlobalContextProvider = (props) => {
     const [carrito, setCarrito] = useState([]);
 
     function addItem(item, quantity) {
-        let isInCart = false;
+        let booleano = false;
         let indice = 0;
         let arrayAux = [...carrito];
         let objAux = { ...item, cantidad: quantity }
         objAux.cantidad = quantity;
         
-        arrayAux.forEach((element, index) => {
-            if (element.id === item.id) {
-                isInCart = true;
-                indice = index;
-            }
-        });
+        function isInCart(id) {
+            let aux = false;
+            arrayAux.forEach((element, index) => {
+                if (element.id === id) {
+                    aux = true;
+                    indice = index;
+                }
+            });
+            return aux;
+        }
+        booleano = isInCart(item.id);
 
-        if (!isInCart) {    
+        if (!booleano) {    
             arrayAux.push(objAux);
             setCarrito([...arrayAux]);
         }else{
