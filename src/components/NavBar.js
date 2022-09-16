@@ -1,5 +1,4 @@
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -44,14 +43,6 @@ const NavBar = () => {
                                     <Link to='/category/Unidades_ópticas' style={estilosLink}>Unidades ópticas</Link>
                                     <Link to='/category/Placas_de_video' style={estilosLink}>Placas de video</Link>
                                 </Nav>
-                                <Form className="d-flex">
-                                    <Form.Control
-                                        type="search"
-                                        placeholder="Búsqueda."
-                                        className="me-2"
-                                        aria-label="Search"
-                                    />
-                                </Form>
                             </Offcanvas.Body>
                         </Navbar.Offcanvas>
                     </Container>

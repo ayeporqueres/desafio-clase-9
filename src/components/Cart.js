@@ -24,12 +24,12 @@ const Cart = () => {
             <section>
                 {carrito.map((item) => {
                     return (
-                        <div  key={item.id} className='itenCardContainer'>
+                        <div key={item.id} className='itenCardContainer'>
                             <img src={imagenes[item.seccion]} alt="" />
                             <div>{item.descripcion}</div>
                             <div>Precio: {item.precio}</div>
-                            <div>Cantidad: {item.cantidad}</div>
-                            <div>U$S:{item.precio*item.cantidad}</div>
+                            <div>Cantidad: {item.quantity}</div>
+                            <div>U$S:{item.precio * item.quantity}</div>
                             <button onClick={() => removeItem(item.id)}>X</button>
                             <br></br>
                             <br></br>
@@ -37,6 +37,10 @@ const Cart = () => {
                     );
                 })}
             </section>
+            {carrito.length > 0 &&
+                <div className='itenCardContainer'>
+                    El total de tu compra es: U$S {carrito.reduce((acum, el) => acum + (el.precio*el.quantity), 0)}
+                </div>}
         </div>
     );
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import customFetch from "../mocks/promesa";
 import { useEffect, useState } from "react";
 import datos from '../mocks/datos';
@@ -8,6 +9,7 @@ const ItemListContainer = () => {
     const [res, setRes] = useState([]);
     const { categoryId } = useParams();
     const [bandera, setBandera] = useState(false);
+    let tiempo = 20;
     useEffect(() => {
         setBandera(false);
         if (categoryId) {
@@ -17,14 +19,14 @@ const ItemListContainer = () => {
             if (aux.length > 0) {
                 filtro = filtro.replace(regexp, ' ');
             }
-            customFetch(2000, datos)
+            customFetch(tiempo, datos)
                 .then(data => {
                     setRes(data.filter((item) => item.seccion === filtro))
                     setBandera(true);
                 })
                 .catch(error => console.log(error));
         } else {
-            customFetch(2000, datos)
+            customFetch(tiempo, datos)
             .then(data => {
                 let aux = [];
                 for (let i = 0; i < 10; i++) {

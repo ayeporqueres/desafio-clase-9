@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
     const [ bandera, setBandera ] = useState(false);
     useEffect(() => {
         setBandera(false);
-        customFetch(2000, datos.find((item) => item.id === parseInt(id)))
+        customFetch(20, datos.find((item) => item.id === parseInt(id)))
             .then(data => {
                 setDato(data);
                 setBandera(true);
