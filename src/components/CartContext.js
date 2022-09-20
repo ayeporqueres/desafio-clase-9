@@ -29,9 +29,12 @@ export const GlobalContextProvider = (props) => {
     function cartWidget() {
         return carrito.reduce((acum, item) => acum + item.quantity, 0);
     }
+    function totalCart() {
+        return carrito.reduce((acum, el) => acum + (el.precio * el.quantity), 0)
+    }
 
     return (
-        <GlobalContext.Provider value={{ carrito, addItem, removeItem, clear, cartWidget }}>
+        <GlobalContext.Provider value={{ carrito, addItem, removeItem, clear, cartWidget, totalCart }}>
             {props.children}
         </GlobalContext.Provider>
     );

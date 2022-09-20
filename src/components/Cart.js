@@ -5,7 +5,7 @@ import './styles/ItemCart.css';
 import imagenes from '../assets/img';
 
 const Cart = () => {
-    const { carrito, removeItem, clear } = useContext(GlobalContext);
+    const { carrito, removeItem, clear, totalCart } = useContext(GlobalContext);
     return (
         <div>
             {carrito.length > 0 ?
@@ -39,7 +39,7 @@ const Cart = () => {
             </section>
             {carrito.length > 0 &&
                 <div className='itenCardContainer'>
-                    El total de tu compra es: U$S {carrito.reduce((acum, el) => acum + (el.precio * el.quantity), 0)}
+                    El total de tu compra es: U$S {totalCart()}
                     <button>Terminar la compra</button>
                 </div>}
         </div>
