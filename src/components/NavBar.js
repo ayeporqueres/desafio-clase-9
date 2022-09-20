@@ -20,7 +20,7 @@ const NavBar = () => {
                     <Container fluid>
                         <Navbar.Brand ><Link to='/'>JTS SHOP</Link></Navbar.Brand>
                         <Link to='/cart'>
-                            <CartWidget items={6} />
+                            <CartWidget/>
                         </Link>
                         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                         <Navbar.Offcanvas

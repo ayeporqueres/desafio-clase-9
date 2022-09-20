@@ -26,8 +26,12 @@ export const GlobalContextProvider = (props) => {
         return carrito.some(el => el.id === id) 
     }
 
+    function cartWidget() {
+        return carrito.reduce((acum, item) => acum + item.quantity, 0);
+    }
+
     return (
-        <GlobalContext.Provider value={{ carrito, addItem, removeItem, clear}}>
+        <GlobalContext.Provider value={{ carrito, addItem, removeItem, clear, cartWidget }}>
             {props.children}
         </GlobalContext.Provider>
     );

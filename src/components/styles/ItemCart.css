@@ -63,3 +63,9 @@
     width           : 30px;
     height          : 30px;
 }
+.itenCardContainer>button{
+    height: 50px;
+    margin-left: 10px;
+    padding: 5px;
+    color: white;
+}

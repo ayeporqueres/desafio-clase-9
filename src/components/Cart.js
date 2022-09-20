@@ -39,7 +39,8 @@ const Cart = () => {
             </section>
             {carrito.length > 0 &&
                 <div className='itenCardContainer'>
-                    El total de tu compra es: U$S {carrito.reduce((acum, el) => acum + (el.precio*el.quantity), 0)}
+                    El total de tu compra es: U$S {carrito.reduce((acum, el) => acum + (el.precio * el.quantity), 0)}
+                    <button>Terminar la compra</button>
                 </div>}
         </div>
     );

@@ -7,12 +7,13 @@ import { GlobalContext } from './CartContext';
 
 
 const ItemDetail = ({ item, bandera }) => {
-    const [controlBoton, setctrVista] = useState(true);
+    const [controlBoton, setControlBoton] = useState(true);
+
     const {addItem} = useContext(GlobalContext);
 
     function onAdd(valor) {
         alert(`Agregaste ${valor} item${valor > 1 ? 's' : ''}`);
-        setctrVista(false);
+        setControlBoton(false);
         addItem(item, valor);
     }
     return (
