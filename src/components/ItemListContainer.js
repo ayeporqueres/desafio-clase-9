@@ -1,17 +1,19 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import customFetch from "../mocks/promesa";
 import { useEffect, useState } from "react";
-import datos from '../mocks/datos';
 import ItemList from './ItemList';
 import { useParams } from "react-router-dom";
+
+import { getFirestore } from "../firebase/firebase.config";
+
 
 const ItemListContainer = () => {
     const [res, setRes] = useState([]);
     const { categoryId } = useParams();
     const [bandera, setBandera] = useState(false);
-    let tiempo = 20;
+
     useEffect(() => {
         setBandera(false);
+        const db = getFirestore();
+        const itemCollection = db.collection("items");
         if (categoryId) {
             const regexp = /_/g;
             let aux = [...categoryId.matchAll(regexp)];
@@ -19,25 +21,31 @@ const ItemListContainer = () => {
             if (aux.length > 0) {
                 filtro = filtro.replace(regexp, ' ');
             }
-            customFetch(tiempo, datos)
-                .then(data => {
-                    setRes(data.filter((item) => item.seccion === filtro))
-                    setBandera(true);
-                })
-                .catch(error => console.log(error));
-        } else {
-            customFetch(tiempo, datos)
-            .then(data => {
-                let aux = [];
-                for (let i = 0; i < 10; i++) {
-                    aux.push(data[Math.floor(Math.random() * data.length)]);
+            const item = itemCollection.where('seccion', '==',`${filtro}` );
+            item.get()
+                .then(response => {
+                    if (response.docs.length===0) {
+                        console.log('Archivo no encontrado.');
+                        return;
                     }
-                    setRes(aux);
+                    setRes(response.docs);
                     setBandera(true);
                 })
-                .catch(error => console.log(error));
+                .catch(error => console.log(error))
+            } else {
+                itemCollection.get()
+                .then(response => {
+                    if (response.size === 0) {
+                        console.log('Archivo no encontrado.');
+                        return;
+                    }
+                    setRes(response.docs);
+                    setBandera(true);
+                })
+                .catch(error => console.log(error))
         }
     }, [categoryId]);
+
     return (
         <>
             {bandera ? <ItemList items={res} /> : <div className="loader__container">Juan Isa programador

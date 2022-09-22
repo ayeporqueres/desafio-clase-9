@@ -1,22 +1,32 @@
-import customFetch from "../mocks/promesa";
 import { useEffect, useState } from "react";
-import datos from '../mocks/datos';
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+
+import { getFirestore } from "../firebase/firebase.config";
+
 
 const ItemDetailContainer = () => {
     const [dato, setDato] = useState([]);
     const { id } = useParams();
-    const [ bandera, setBandera ] = useState(false);
+    const [bandera, setBandera] = useState(false);
+
+
     useEffect(() => {
-        setBandera(false);
-        customFetch(20, datos.find((item) => item.id === parseInt(id)))
-            .then(data => {
-                setDato(data);
-                setBandera(true);
+        const db = getFirestore();
+        const itemCollection = db.collection("items");
+        itemCollection.get()
+            .then(res => {
+                res.forEach(item => {
+                    if (item.id === id) {
+                        setDato(item.data());
+                        setBandera(true);
+                    }
+                });
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error))
+
     }, [id]);
+
     return (
         <div>
             <h1 style={{textAlign:'center'}}>Detalle del producto:</h1>

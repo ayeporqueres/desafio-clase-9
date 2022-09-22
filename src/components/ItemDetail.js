@@ -22,11 +22,11 @@ const ItemDetail = ({ item, bandera }) => {
                 <img src={imagenes[item.seccion]} alt="" />
                 <h3>Descripion: {item.descripcion}</h3>
                 <h3>Valor: U$S {item.precio}</h3>
-                <h3>Cantidad en stok: {item.stok}</h3>
+                <h3>Cantidad en stok: {item.stock}</h3>
                 <h3>Clasificación: {item.seccion}</h3>
                 {
                     controlBoton ?
-                        <ItemCount stock={item.stok} initial={0} onAdd={onAdd} /> :
+                        <ItemCount stock={item.stock} initial={0} onAdd={onAdd} /> :
                         <Link to='/cart'>Ir al carrito de compras</Link>
                 }
             </div> :
