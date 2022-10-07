@@ -18,7 +18,7 @@ const NavBar = () => {
             {['xxl'].map((expand) => (
                 <Navbar key={expand} bg="light" expand={expand} className="mb-1">
                     <Container fluid>
-                        <Navbar.Brand ><Link to='/'>JTS SHOP</Link></Navbar.Brand>
+                        <Navbar.Brand ><Link to='/' style={estilosLink}>JTS SHOP</Link></Navbar.Brand>
                         <Link to='/cart'>
                             <CartWidget/>
                         </Link>

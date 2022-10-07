@@ -9,7 +9,6 @@ const ItemListContainer = () => {
     const [res, setRes] = useState([]);
     const { categoryId } = useParams();
     const [bandera, setBandera] = useState(false);
-
     useEffect(() => {
         setBandera(false);
         const db = getFirestore();
@@ -21,10 +20,10 @@ const ItemListContainer = () => {
             if (aux.length > 0) {
                 filtro = filtro.replace(regexp, ' ');
             }
-            const item = itemCollection.where('seccion', '==',`${filtro}` );
+            const item = itemCollection.where('seccion', '==', `${filtro}`);
             item.get()
                 .then(response => {
-                    if (response.docs.length===0) {
+                    if (response.docs.length === 0) {
                         console.log('Archivo no encontrado.');
                         return;
                     }
@@ -32,8 +31,8 @@ const ItemListContainer = () => {
                     setBandera(true);
                 })
                 .catch(error => console.log(error))
-            } else {
-                itemCollection.get()
+        } else {
+            itemCollection.get()
                 .then(response => {
                     if (response.size === 0) {
                         console.log('Archivo no encontrado.');

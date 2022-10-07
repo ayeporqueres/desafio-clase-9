@@ -63,3 +63,20 @@
         transform: rotate(360deg);
     }
 }
+
+@media screen and (max-width:600px) {
+    #mostrarDetalles {
+        height   : fit-content;
+        width    : 90%;
+        font-size: 1rem;
+    }
+
+    #mostrarDetalles>h3 {
+        font-size: 1.4rem;
+    }
+
+    #mostrarDetalles>img {
+        width : 100px;
+        height: 100px;
+    }
+}
